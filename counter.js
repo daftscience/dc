@@ -1,13 +1,5 @@
 document.onkeyup = KeyCheck;
 
-
-
-
-
-
-
-
-
 if (window.addEventListener) {
     // create the keys and konami variables
     var keys = [],
@@ -31,10 +23,6 @@ if (window.addEventListener) {
 };
 
 
-
-
-
-
 function toggleDisable(){    
 
 //Toggles the disbled flag.
@@ -43,7 +31,6 @@ function toggleDisable(){
 	}else{
 	document.infoForm.dsbl.value = '1';
 	}
-
 
 //sets the inputs to disabled/enabled
     var tot = 0;
@@ -56,12 +43,6 @@ function toggleDisable(){
 			}
         }
     }
-
-
-
-
-
-
 
 
 
@@ -153,7 +134,6 @@ function KeyCheck(){
 	document.getElementById('total').value = tot;
 
 }
-
 
 function reset(){
 
