@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+
+    <script language="JavaScript" src="counter.js" type=""></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+		<title>Diff Counter</title>
+		
+		<audio id="tardis" src="tardis.wav" preload="auto"></audio>
+		
+		
+		
+		
+	</head>
+	<body onload="toggleDisable();">
+		<div class="master">
+			<div class="header">
+				<div class="text">Diff Counter</div>
+			</div>
+			<div class="body">
+				<form name="infoForm" id="infoForm" action="">
+					<input type="text" name="KeyName" value="start" readonly><br>
+					<input type="text" id="addsub" value="+" readonly>
+					<input type="text" id="dsbl" name="dsbl" value="1">
+					<input type="text" id="debug" name="debug" value="debug">
+				</form>
+				<form name="cellForm" id="cellForm">
+					<table>
+						<tr>
+							<td><input type="text" id="neut" name="neut" value=""></td>
+							<td>Neutrophils</td>
+						</tr>
+						<tr>
+							<td><input type="text" id="band" value=""></td>
+							<td>Band Forms</td>
+						</tr>
+						<tr>
+							<td><input type="text" id="lymph" value=""></td>
+							<td>Lymphocytes</td>
+						</tr>
+						<tr>
+							<td><input type="text" id="mono" value=""></td>
+							<td>Monocytes</td>
+						</tr>
+						<tr>
+							<td><input type="text" id="eos" value=""></td>
+							<td>Eosinophils:</td>
+						</tr>
+						<tr>
+							<td><input type="text" id="baso" value=""></td>
+							<td>Basophils</td>
+						</tr>
+						<tr>
+							<td><input type="text" id="meta" value=""></td>
+							<td>Metamyelocytes</td>
+						</tr>
+						<tr>
+							<td><input type="text" id="myelo" value=""></td>
+							<td>Myelocytes</td>
+						</tr>
+						<tr>
+							<td><input type="text" id="pro" value=""></td>
+							<td>Promyelocytes</td>
+						</tr>
+						<tr>
+							<td><input type="text" id="blast" value=""></td>
+							<td>Blasts</td>
+						</tr>
+						<tr>
+							<td><input type="text" id="nrbc" value=""></td>
+							<td>NRBCs</td>
+						</tr>
+						<tr>
+							<td><input type="text" id="other" value=""></td>
+							<td>Others</td>
+						</tr>
+						<tr>
+							<td><input type="text" id="mega" value=""></td>
+							<td>Megakaryocytes</td>
+						</tr>
+						<tr>
+							<td><input type="text" id="plasma" value=""></td>
+							<td>Plasma Cells</td>
+						</tr>
+						
+						<form name="optionsForm" id="optionsForm">
+								
+							<table>
+								<tr><td>
+									<input type="text" id="total" name="total" value="0"></td>
+									<td>Total</td>
+								</tr>							
+								<tr><td>
+									Count To: </td><td>
+									<input type="text" id="maxNum" value="100">
+								</td></tr>
+								<tr><td>
+									<input type="button" class="btn" onclick="toggleDisable();" value="edit">
+								</td></tr>
+								
+								
+								<tr><td>
+									<input type="button" class="btn" onclick="reset();" value="Reset ">
+								</td></td>
+							</table>
+						</form>
+					</table>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
