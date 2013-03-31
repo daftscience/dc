@@ -120,10 +120,13 @@ function KeyCheck(){
 //Adds or subtracts.  
     var tot = parseInt(document.getElementById('total').value);
     document.infoForm.debug.value = tot;
+	var max = parseInt(document.getElementById('maxNum').value);
     var temp = Number(document.getElementById(cell).value);
     if (document.infoForm.addsub.value === '+') {
-        ++temp;
-        ++tot;
+        if (tot < max) {
+			++temp;
+        	++tot;
+		}
     }else{ 
         if (document.infoForm.addsub.value === '-' && temp > 0) {
             --temp;
