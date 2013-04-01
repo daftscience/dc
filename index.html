@@ -1,28 +1,29 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 	<head>
-
-    <script language="JavaScript" src="counter.js" type=""></script>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+		<script language="JavaScript" src="counter.js" type=""></script>
+    		<!--[if !IE]><!-->
+			<link rel="stylesheet" type="text/css" href="styles.css">
+ 		<!--<![endif]-->
+ 		
+ 		<!--[if IE]>
+			<link rel="stylesheet" type="text/css" href="iesucks.css" />
+		<![endif]-->
 		<title>Diff Counter</title>
-		
 		<audio id="tardis" src="tardis.wav" preload="auto"></audio>
-		
-		
-		
-		
 	</head>
 	<body onload="toggleDisable();">
+	<body >
 		<div class="master">
 			<div class="header">
 				<div class="text">Diff Counter</div>
 			</div>
 			<div class="body">
 				<form name="infoForm" id="infoForm" action="">
-					<input type="text" name="KeyName" value="start" readonly><br>
-					<input type="text" id="addsub" value="+" readonly>
-					<input type="text" id="dsbl" name="dsbl" value="1">
-					<input type="text" id="debug" name="debug" value="debug">
+					<input type="hidden" name="KeyName" value="start" readonly class="static"><br>
+					<input type="hidden" id="addsub" value="+" readonly class="static">
+					<input type="hidden" id="dsbl" name="dsbl" value="1" class="static">
+					<input type="hidden" id="debug" name="debug" value="debug" class="static">
 				</form>
 				<form name="cellForm" id="cellForm">
 					<table>
@@ -44,7 +45,7 @@
 						</tr>
 						<tr>
 							<td><input type="text" id="eos" value=""></td>
-							<td>Eosinophils:</td>
+							<td>Eosinophils</td>
 						</tr>
 						<tr>
 							<td><input type="text" id="baso" value=""></td>

@@ -25,25 +25,34 @@ if (window.addEventListener) {
 
 function toggleDisable(){    
 
-//Toggles the disbled flag.
-    if(document.infoForm.dsbl.value == '1'){
-    document.infoForm.dsbl.value = '0';
+
+
+
+
+//Toggles the disabled flag.
+	if(document.infoForm.dsbl.value == '1'){
+		document.infoForm.dsbl.value = '0';
 	}else{
 	document.infoForm.dsbl.value = '1';
 	}
 
 //sets the inputs to disabled/enabled
-    var tot = 0;
-    var inputs = document.getElementsByTagName("INPUT");
-    for (var i = 0; i < inputs.length; i++) {
-        if (inputs[i].type === 'text') {
-            inputs[i].disabled = !inputs[i].disabled;
-			if(inputs[i].form ==='cellForm'){
-				tot += inputs[i].value;
+	var tot = 0;
+	var inputs = document.getElementsByTagName("INPUT");
+	for (var i = 0; i < inputs.length; i++) {
+		if (inputs[i].className != 'static'){
+        		if (inputs[i].type === 'text') {
+      				inputs[i].readOnly = !inputs[i].readOnly;
+      				if (inputs[i].readOnly){
+      					inputs[i].style.backgroundColor='#e8e3e2';    		
+      				}else{
+      					inputs[i].style.backgroundColor='#9dcaeb';      				}
+				if(inputs[i].form ==='cellForm'){
+					tot += inputs[i].value;
+				}
 			}
-        }
-    }
-
+		}
+	}
 
 
 }
@@ -64,7 +73,6 @@ function KeyCheck(){
         case 98:
         case 50:
             cell = 'neut';
-            //toggleDisable();
             break;
         case 97:
         case 49:
@@ -109,6 +117,7 @@ function KeyCheck(){
         case 189:
         case 109:
             document.infoForm.addsub.value = '-';
+            document.infoForm.backgroundColor = 'red';
             return;
         case 187:
         case 107:
@@ -118,23 +127,27 @@ function KeyCheck(){
             return;    }
 
 //Adds or subtracts.  
-    var tot = parseInt(document.getElementById('total').value);
-    document.infoForm.debug.value = tot;
+	var tot = parseInt(document.getElementById('total').value);
+	document.infoForm.debug.value = tot;
 	var max = parseInt(document.getElementById('maxNum').value);
-    var temp = Number(document.getElementById(cell).value);
-    if (document.infoForm.addsub.value === '+') {
+	var temp = Number(document.getElementById(cell).value);
+	if (document.infoForm.addsub.value === '+') {
         if (tot < max) {
-			++temp;
+		++temp;
         	++tot;
 		}
-    }else{ 
-        if (document.infoForm.addsub.value === '-' && temp > 0) {
-            --temp;
-            --tot;
-   		}
-    }
-    document.getElementById(cell).value = temp;
-	document.getElementById('total').value = tot;
+	}else{ 
+		if (document.infoForm.addsub.value === '-' && temp > 0) {
+		--temp;
+		--tot;
+		}
+    	}
+    	if (temp == 0 ){
+    		document.getElementById(cell).value = '';
+    	}else{
+	    document.getElementById(cell).value = temp;
+	}
+    	document.getElementById('total').value = tot;
 
 }
 
@@ -154,5 +167,4 @@ function reset(){
             inputs[i].value = "";
         }
     }
-
 }
